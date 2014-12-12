@@ -15,6 +15,10 @@ $(document).on('pageinit', function() {
 		createNotification();
 	});
 
+    $('#clear').on('click', function() {
+        clearNotification();
+    });
+
 
 });
 
@@ -45,8 +49,11 @@ function createDialog() {
         	
         	
 function dialogDismissed(buttonIndex) {
-	if(buttonIndex==1) new Toast({content: "Get on with your work", duration: 3000});
-   	else if(buttonIndex==2) new Toast({content: 'Take a Break', duration: 3000});
+	if(buttonIndex==1) new Toast({content: "Take a Break", duration: 3000});
+   	else if(buttonIndex==2) new Toast({content: 'Get on with your work', duration: 3000});
+}
+function clearNotifications(){
+    notification_count = 0;
 }
 
    
